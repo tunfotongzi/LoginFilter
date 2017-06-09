@@ -38,7 +38,8 @@ public class LoginFilter implements Filter {
 		request.setCharacterEncoding("UTF-8");
 		
 		//如果页面是login.jsp那么直接放行并return，不再继续向下执行代码
-		if(request.getRequestURI().indexOf("login.jsp")!=-1){
+		if(request.getRequestURI().indexOf("login.jsp")!=-1 
+				|| request.getRequestURI().indexOf("LoginServlet")!=-1){
 			arg2.doFilter(arg0, arg1);
 			return;
 		}
